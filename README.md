@@ -47,7 +47,7 @@ comes from a row in `mappings/*.csv`.
 | `output/lineage/source_event_lineage.csv` | every source event -> CDM table/row/concept or reason |
 | `output/validation_summary.csv`, `mapping_coverage.csv`, `unmapped_summary.csv`, `dq_log.csv` | results |
 | `output/intermediate/drug_dose.csv` | ordered dose per drug_exposure (kept out of `sig`) |
-| `docs/` | requirements, architecture debate, decisions, contract, privacy, vocabulary, team plan, validation, results |
+| `docs/` | requirements, source-to-target contract, privacy, vocabulary, validation, roadmap, results |
 
 ## Current results (`--mapping-mode review`)
 

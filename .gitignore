@@ -19,3 +19,9 @@ __pycache__/
 .*.prev-*/
 *.failed/
 *.review_gate.csv
+
+# internal design docs kept local only (proposals, debate, decisions, team plan)
+docs/02-architecture-proposals.md
+docs/03-debate-transcript.md
+docs/04-decisions-and-tradeoffs.md
+docs/08-six-person-task-plan.md
