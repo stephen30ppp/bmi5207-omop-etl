@@ -1,0 +1,16 @@
+source_table,cdm_table,unmapped_reason,rows
+case_visit,,exact duplicate of an earlier case_visit row,1
+case_visit,condition_occurrence,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary),13
+case_visit,condition_occurrence,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode,16
+lab_results,measurement,"Workflow flag ('Reviewed'), not a clinical measurement result",1
+medication_order,drug_exposure,Blood product (fresh frozen plasma); no Standard Drug concept verified,1
+medication_order,drug_exposure,Composition of 'Mylocaine' suspension not verified,1
+medication_order,drug_exposure,Emollient (Cetaphil); no Standard Drug concept verified,1
+medication_order,drug_exposure,Emollient (QV Cream); no Standard Drug concept verified,2
+medication_order,drug_exposure,Enteral nutrition product (Glucerna); no Standard Drug concept verified,2
+medication_order,drug_exposure,"No Standard metered-dose-inhaler form for fenoterol/ipratropium; Athena forms (powder, solution) do not match source 'Inhaler, puff'",1
+medication_order,drug_exposure,Oral nutrition supplement (Fresubin); no Standard Drug concept verified,1
+medication_order,drug_exposure,Oral nutrition supplement (Resource Fruit Beverage); no Standard Drug concept verified,3
+medication_order,drug_exposure,Oral nutrition supplement (Resource Plus); no Standard Drug concept verified,1
+medication_order,drug_exposure,Skin cleanser (QV Gentle Wash); no Standard Drug concept verified,1
+patient_demo,,Source value 'No Mapping' means unknown; no OBSERVATION is generated,4

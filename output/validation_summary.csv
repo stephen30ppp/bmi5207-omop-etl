@@ -1,0 +1,130 @@
+group,check,status,detail
+source,patient_demo rows == 5,PASS,5
+source,case_visit rows == 22,PASS,22
+source,lab_results rows == 162,PASS,162
+source,medication_order rows == 170,PASS,170
+source,surgical rows == 7,PASS,7
+source,case_visit exact duplicates == 1,PASS,1
+rows,person == 5,PASS,5
+rows,death == 2,PASS,2
+rows,visit_occurrence == 21,PASS,21
+rows,observation_period == 5,PASS,5
+rows,cdm_source == 1,PASS,1
+reconciliation,PER source events with an outcome == 5,PASS,5
+reconciliation,DTH source events with an outcome == 2,PASS,2
+reconciliation,OBS source events with an outcome == 10,PASS,10
+reconciliation,VIS source events with an outcome == 22,PASS,22
+reconciliation,DX source events with an outcome == 149,PASS,149
+reconciliation,LAB source events with an outcome == 162,PASS,162
+reconciliation,DRG source events with an outcome == 170,PASS,170
+reconciliation,PRC source events with an outcome == 7,PASS,7
+reconciliation,diagnosis source events (after visit dedup) == 149,PASS,149
+reconciliation,person: every row traces to a source event,PASS,0
+reconciliation,visit_occurrence: every row traces to a source event,PASS,0
+reconciliation,condition_occurrence: every row traces to a source event,PASS,0
+reconciliation,drug_exposure: every row traces to a source event,PASS,0
+reconciliation,procedure_occurrence: every row traces to a source event,PASS,0
+reconciliation,measurement: every row traces to a source event,PASS,0
+reconciliation,observation: every row traces to a source event,PASS,0
+reconciliation,death: every row traces to a source event,PASS,0
+reconciliation,every concept_id=0 row has an unmapped_reason,PASS,0
+reconciliation,outcomes,PASS,"{'deduplicated': 1, 'not_generated': 4, 'written': 494, 'written_rerouted': 28}"
+structure,person.person_id required non-null,PASS,0
+structure,person.gender_concept_id required non-null,PASS,0
+structure,person.year_of_birth required non-null,PASS,0
+structure,person.race_concept_id required non-null,PASS,0
+structure,person.ethnicity_concept_id required non-null,PASS,0
+structure,person.person_id unique,PASS,
+structure,observation_period.observation_period_id required non-null,PASS,0
+structure,observation_period.person_id required non-null,PASS,0
+structure,observation_period.observation_period_start_date required non-null,PASS,0
+structure,observation_period.observation_period_end_date required non-null,PASS,0
+structure,observation_period.period_type_concept_id required non-null,PASS,0
+structure,observation_period.observation_period_id unique,PASS,
+structure,visit_occurrence.visit_occurrence_id required non-null,PASS,0
+structure,visit_occurrence.person_id required non-null,PASS,0
+structure,visit_occurrence.visit_concept_id required non-null,PASS,0
+structure,visit_occurrence.visit_start_date required non-null,PASS,0
+structure,visit_occurrence.visit_end_date required non-null,PASS,0
+structure,visit_occurrence.visit_type_concept_id required non-null,PASS,0
+structure,visit_occurrence.visit_occurrence_id unique,PASS,
+structure,condition_occurrence.condition_occurrence_id required non-null,PASS,0
+structure,condition_occurrence.person_id required non-null,PASS,0
+structure,condition_occurrence.condition_concept_id required non-null,PASS,0
+structure,condition_occurrence.condition_start_date required non-null,PASS,0
+structure,condition_occurrence.condition_type_concept_id required non-null,PASS,0
+structure,condition_occurrence.condition_occurrence_id unique,PASS,
+structure,drug_exposure.drug_exposure_id required non-null,PASS,0
+structure,drug_exposure.person_id required non-null,PASS,0
+structure,drug_exposure.drug_concept_id required non-null,PASS,0
+structure,drug_exposure.drug_exposure_start_date required non-null,PASS,0
+structure,drug_exposure.drug_exposure_end_date required non-null,PASS,0
+structure,drug_exposure.drug_type_concept_id required non-null,PASS,0
+structure,drug_exposure.drug_exposure_id unique,PASS,
+structure,procedure_occurrence.procedure_occurrence_id required non-null,PASS,0
+structure,procedure_occurrence.person_id required non-null,PASS,0
+structure,procedure_occurrence.procedure_concept_id required non-null,PASS,0
+structure,procedure_occurrence.procedure_date required non-null,PASS,0
+structure,procedure_occurrence.procedure_type_concept_id required non-null,PASS,0
+structure,procedure_occurrence.procedure_occurrence_id unique,PASS,
+structure,measurement.measurement_id required non-null,PASS,0
+structure,measurement.person_id required non-null,PASS,0
+structure,measurement.measurement_concept_id required non-null,PASS,0
+structure,measurement.measurement_date required non-null,PASS,0
+structure,measurement.measurement_type_concept_id required non-null,PASS,0
+structure,measurement.measurement_id unique,PASS,
+structure,observation.observation_id required non-null,PASS,0
+structure,observation.person_id required non-null,PASS,0
+structure,observation.observation_concept_id required non-null,PASS,0
+structure,observation.observation_date required non-null,PASS,0
+structure,observation.observation_type_concept_id required non-null,PASS,0
+structure,observation.observation_id unique,PASS,
+structure,death.person_id required non-null,PASS,0
+structure,death.death_date required non-null,PASS,0
+structure,cdm_source.cdm_source_name required non-null,PASS,0
+structure,cdm_source.cdm_source_abbreviation required non-null,PASS,0
+structure,cdm_source.cdm_holder required non-null,PASS,0
+structure,cdm_source.source_release_date required non-null,PASS,0
+structure,cdm_source.cdm_release_date required non-null,PASS,0
+structure,cdm_source.cdm_version_concept_id required non-null,PASS,0
+structure,cdm_source.vocabulary_version required non-null,PASS,0
+linkage,observation_period.person_id in PERSON,PASS,0
+linkage,visit_occurrence.person_id in PERSON,PASS,0
+linkage,condition_occurrence.person_id in PERSON,PASS,0
+linkage,condition_occurrence.visit_occurrence_id exists and belongs to same person,PASS,0
+linkage,drug_exposure.person_id in PERSON,PASS,0
+linkage,drug_exposure.visit_occurrence_id exists and belongs to same person,PASS,0
+linkage,procedure_occurrence.person_id in PERSON,PASS,0
+linkage,procedure_occurrence.visit_occurrence_id exists and belongs to same person,PASS,0
+linkage,measurement.person_id in PERSON,PASS,0
+linkage,measurement.visit_occurrence_id exists and belongs to same person,PASS,0
+linkage,observation.person_id in PERSON,PASS,0
+linkage,observation.visit_occurrence_id exists and belongs to same person,PASS,0
+linkage,death.person_id in PERSON,PASS,0
+linkage,MEASUREMENT.visit_occurrence_id all NULL (lab episode not a confirmed visit),PASS,0
+vocabulary,condition_occurrence.condition_concept_id non-zero concepts Standard & valid,PASS,[]
+vocabulary,condition_occurrence.condition_concept_id domain == Condition,PASS,[]
+vocabulary,observation.observation_concept_id non-zero concepts Standard & valid,PASS,[]
+vocabulary,observation.observation_concept_id domain == Observation,PASS,[]
+vocabulary,procedure_occurrence.procedure_concept_id non-zero concepts Standard & valid,PASS,[]
+vocabulary,procedure_occurrence.procedure_concept_id domain == Procedure,PASS,[]
+vocabulary,measurement.measurement_concept_id non-zero concepts Standard & valid,PASS,[]
+vocabulary,measurement.measurement_concept_id domain == Measurement,PASS,[]
+vocabulary,drug_exposure.drug_concept_id non-zero concepts Standard & valid,PASS,[]
+vocabulary,drug_exposure.drug_concept_id domain == Drug,PASS,[]
+vocabulary,rows relying on mappings not yet second-reviewed (status PROPOSED),WARN,478 source events - set status=APPROVED after review
+semantics,MEASUREMENT.unit_concept_id all NULL (no units in source),PASS,
+semantics,categorical results not stored in value_as_number,PASS,
+semantics,operator '<' result parsed (B-HCG '<2.0'),PASS,1
+semantics,DRUG_EXPOSURE quantity/route/sig all NULL,PASS,
+semantics,drug_type_concept_id = EHR order (not administration),PASS,
+semantics,sex-specific concepts only in female persons,PASS,[]
+time,visit start <= end,PASS,
+time,no overlapping visits per person,PASS,0
+time,death_date >= last event,PASS,[]
+time,year_of_birth <= first event year,PASS,
+time,observation period covers all events,PASS,
+time,procedure_date within its visit,PASS,
+time,"orders before admission == 20 (A&E orders, kept on their visit)",PASS,20
+privacy,"|shift| in [30, 365] days",PASS,
+privacy,no raw Patient_No / Case_No / raw timestamp in outputs,PASS,[]

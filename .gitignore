@@ -1,0 +1,16 @@
+# private material - never commit
+secrets/
+data/
+*.xlsx
+# profiling dumps contain raw identifiers and raw dates (regenerate with profiling/*.py)
+profiling/*.txt
+# design-debate working files (raw model outputs, archived run, orchestrator)
+debate/
+debate.py
+.work/
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store

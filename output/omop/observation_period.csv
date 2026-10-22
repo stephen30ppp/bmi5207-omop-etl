@@ -1,0 +1,6 @@
+observation_period_id,person_id,observation_period_start_date,observation_period_end_date,period_type_concept_id
+1,1,2015-12-21,2015-12-24,32882
+2,2,2016-12-18,2017-03-19,32882
+3,3,2017-02-26,2017-03-04,32882
+4,4,2015-12-30,2016-05-09,32882
+5,5,2016-01-26,2017-08-17,32882

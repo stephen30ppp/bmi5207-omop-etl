@@ -1,0 +1,211 @@
+{
+  "cdm_version": "v5.4",
+  "mapping_mode": "review",
+  "vocabulary_version": "Athena 2026-10-22 (SNOMED 2026-02-01 Intl)",
+  "inputs": [
+    {
+      "source_type": "patient_demo",
+      "folder_index": 1,
+      "sha256": "5ee8585e3d9aff2ab6122a94ac4823fee1ac6940b448ee31f5983c8c32d11f01",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "patient_demo",
+      "folder_index": 2,
+      "sha256": "0a6ce5a84c2588c72c14ace1a1797d71cac1eb2b8192af240bba99b462619881",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "patient_demo",
+      "folder_index": 3,
+      "sha256": "79b9f88ffe4221ab7d191b0be8b2bd5a2a9ddc8025c305a5286a26901c8c7dc3",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "patient_demo",
+      "folder_index": 4,
+      "sha256": "a07f5ba421179febd10d4f0d5d417f2a2b7b25244493a24ed250f7f0cd0f5967",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "patient_demo",
+      "folder_index": 5,
+      "sha256": "a0a6a5f6d6c1f4fb3ef0cc464c3ff2568a9872b63cab31d6e4ad174a539c638c",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "case_visit",
+      "folder_index": 1,
+      "sha256": "eb503b7da97f1eaddfc21a36edf8fe3a7aa872227297b82b02de4f4ddf6b9ddd",
+      "rows": 3,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "case_visit",
+      "folder_index": 2,
+      "sha256": "55bbd8551933d404b0798bdf5dc740e74f242676876962a47735ce9dd0bbd7b7",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "case_visit",
+      "folder_index": 3,
+      "sha256": "b2099b4c8273c5240e2eb00ad2952d442ef221556c171f9d2e8a09fd8b8e6bff",
+      "rows": 2,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "case_visit",
+      "folder_index": 4,
+      "sha256": "9e4db2d670da5b09a458317299036867a5c3089d8e980e312c47b6eb161a1f87",
+      "rows": 15,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "case_visit",
+      "folder_index": 5,
+      "sha256": "f514509de8b1fbf93562ec7a35db0e6de052f8fbea77f6c262ccf74244b09196",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "lab_results",
+      "folder_index": 1,
+      "sha256": "53ed9e18567aacb8b285c182eaf1dd6883440fcc24b88918ac702dc74a8724fc",
+      "rows": 47,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "lab_results",
+      "folder_index": 2,
+      "sha256": "4a48cc2fb5f8efd11c21b938524222f26a81e8cb0857d59247ee30214e763d5e",
+      "rows": 30,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "lab_results",
+      "folder_index": 3,
+      "sha256": "8b02b59e89f37b25e6091234f8c2af73e7bff6a08daca8755e3d8bac3624e9f1",
+      "rows": 3,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "lab_results",
+      "folder_index": 4,
+      "sha256": "4bce0e77c1b8877937e1e04b60fc91db621ac808dc933322ff470452f9687faa",
+      "rows": 46,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "lab_results",
+      "folder_index": 5,
+      "sha256": "09be9c55374e16742bed6b75e6b89ebaab1453a1fbf560cea99b8ba15181751e",
+      "rows": 36,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "medication_order",
+      "folder_index": 1,
+      "sha256": "9c1edb9ca65b5ef81f57a1fc514327816b99b7d5220b2d7b34886e5efbff12ee",
+      "rows": 13,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "medication_order",
+      "folder_index": 2,
+      "sha256": "6ef84583cd88fddf8bd14035848e188082cda300455369ec4835647b0a396b5a",
+      "rows": 12,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "medication_order",
+      "folder_index": 3,
+      "sha256": "5c8747a057992c27537c08bff94876ab46d260d461a0d4b0e5ebb5bd375dc2fb",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "medication_order",
+      "folder_index": 4,
+      "sha256": "cf79eb36dda9f41b7e575ca08eccdd2aba91a3c5f755d5e83cbbe3d5ace43716",
+      "rows": 103,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "medication_order",
+      "folder_index": 5,
+      "sha256": "d22c24e517db32ec6764ab0ba8a2fc97ea658a68c685f69d753395d60808d697",
+      "rows": 41,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "surgical",
+      "folder_index": 1,
+      "sha256": "e889f3207ca84300330b1f9f9206d3beb71f80f7888a64926f2e9d7f645527e3",
+      "rows": 2,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "surgical",
+      "folder_index": 2,
+      "sha256": "bc6cd624a12fe2040da93fa6682d5ea1a16248acd283ea079d31f3876629e4f3",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "surgical",
+      "folder_index": 3,
+      "sha256": "2db06c1afa1a0da508f4957cb3111235d9cf4d112a5726c00089083bb51f91a0",
+      "rows": 2,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "surgical",
+      "folder_index": 4,
+      "sha256": "f2d177c37e59b7337b99e8087916f71dd8a086f0f0ecd480c8f95eabef29cce3",
+      "rows": 1,
+      "sheet": "Sheet1"
+    },
+    {
+      "source_type": "surgical",
+      "folder_index": 5,
+      "sha256": "381f877d8f23df3c28358c5efc6a6386c1bc41911f8a11eaf51311d4db5be95a",
+      "rows": 1,
+      "sheet": "Sheet1"
+    }
+  ],
+  "outputs": {
+    "omop/person.csv": "a9859de327e4bb32d345eba135fcad43d2bffedbbb0833ef5958bc0811828703",
+    "omop/observation_period.csv": "9e736aba0330f3eb97bb1348d0ab698b8e8534e3f1a33d6c4c06e0a7dbf3fb97",
+    "omop/visit_occurrence.csv": "2e2a3cfa5b338ce4eff8d86e3760b04656d359198a0259e973d0f9d42cae8b32",
+    "omop/condition_occurrence.csv": "eda4a009d56ee1b0a731525ebd8ad808320df9067dea84bb7ab093221b6ea5ee",
+    "omop/drug_exposure.csv": "6cdaab8628c64438c74300657e7bcebf845c7ea3ec8e3a41d3a9160332402fe8",
+    "omop/procedure_occurrence.csv": "4c73b28ba7ced0cb00f344e2c6098b98ffd87d24060059e0313daec21374177c",
+    "omop/measurement.csv": "ee4c89155d7da64074d236dbfc079decb9ed3d3f71399f4638f558c14053fda9",
+    "omop/observation.csv": "2fa9da628efa677ce9a4c879686ce884cebaed1972c389bd174b0f402e44171c",
+    "omop/death.csv": "0259572b1302337351555dc0517703402939cfceb036f3e3153e2400967cdb99",
+    "omop/cdm_source.csv": "44c000f8a93507270d811691b3b43e7100a5d97a09537e6eed2424bb1f4921fb"
+  },
+  "row_counts": {
+    "person": 5,
+    "observation_period": 5,
+    "visit_occurrence": 21,
+    "condition_occurrence": 121,
+    "drug_exposure": 170,
+    "procedure_occurrence": 10,
+    "measurement": 162,
+    "observation": 32,
+    "death": 2,
+    "cdm_source": 1
+  },
+  "validation": {
+    "PASS": 128,
+    "WARN": 1,
+    "FAIL": 0
+  }
+}

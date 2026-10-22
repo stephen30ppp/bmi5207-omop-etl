@@ -1,0 +1,136 @@
+# concept_id ^ concept_name, fetched from athena.ohdsi.org/api/v1/concepts/{id} on 2026-10-22
+29735^Candidiasis of mouth
+30133^Acute laryngitis
+74737^Aneurysmal bone cyst
+75860^Constipation
+78162^Peripheral vertigo
+78234^Pain of joint of hand
+138455^Stomatitis
+192671^Gastrointestinal hemorrhage
+194382^External hemorrhoids
+196724^Disorder of diaphragm
+200219^Abdominal pain
+201909^Female infertility
+255848^Pneumonia
+256449^Bronchiectasis
+257011^Acute upper respiratory infection
+260139^Acute bronchitis
+313459^Sleep apnea
+314971^Chronic respiratory failure
+317002^Low blood pressure
+319041^Orthostatic hypotension
+319835^Congestive heart failure
+320128^Essential hypertension
+432506^Antacid adverse reaction
+432867^Hyperlipidemia
+432869^Hemorrhagic disorder due to circulating anticoagulants
+434004^Hypervolemia
+434610^Hyperkalemia
+435517^Acidosis
+436659^Iron deficiency anemia
+437038^Blood in urine
+437175^Fall on same level from slipping, tripping or stumbling
+437191^Antibacterial drug adverse reaction
+437833^Hypokalemia
+439996^Anticoagulant adverse reaction
+442793^Complication due to diabetes mellitus
+903654^Tobacco or its derivatives user
+1340204^History of event
+4000609^Disorder of upper gastrointestinal tract
+4006971^Tricuspid valve regurgitation
+4015503^Pertrochanteric fracture
+4043371^Inflammatory disorder of digestive tract
+4056822^Anticoagulant therapy
+4068155^Atrial arrhythmia
+4108235^Combined disorders of mitral, aortic and tricuspid valves
+4108637^Superficial injury of nose
+4110056^Chronic obstructive pulmonary disease with acute lower respiratory infection
+4144111^Gastroesophageal reflux disease without esophagitis
+4154624^Problem situation relating to social and personal history
+4156363^Event
+4157454^Primary malignant neoplasm of lower lobe, bronchus or lung
+4168700^Localized enlarged lymph nodes
+4189343^Aortic valve stenosis
+4198042^Disorder of bilirubin metabolism
+4199599^In vitro fertilization
+4225273^Chronic gastritis
+4239381^Harmful pattern of use of psychoactive substance
+4252872^Mitral valve prolapse
+4256228^Respiratory failure
+4270024^Acute non-ST segment elevation myocardial infarction
+4281541^Open pertrochanteric fracture
+4306292^Upper abdominal pain
+4339214^Secondary pulmonary hypertension
+37016310^Complicated internal hemorrhoid
+37119138^Iron deficiency anemia due to blood loss
+37311320^Extracellular fluid volume depletion
+40481919^Coronary atherosclerosis
+42538119^Transplanted heart valve present
+42617254^Pain in joint, hand
+45533538^Acute laryngitis
+45533564^Disorders of diaphragm
+45533625^Gastrointestinal haemorrhage, unspecified
+45534459^Localized enlarged lymph nodes
+45537926^Haemorrhagic disorder due to circulating anticoagulants
+45537986^Hyperlipidaemia, unspecified
+45537990^Hyperkalaemia
+45537991^Hypokalaemia
+45538490^Respiratory failure, unspecified
+45538509^Gastro-oesophageal reflux disease without oesophagitis
+45542495^Presence of prosthetic heart valve
+45542559^Candidal stomatitis
+45543140^Other peripheral vertigo
+45548143^Other forms of stomatitis
+45552123^Personal history of psychoactive substance abuse
+45552779^Combined disorders of mitral, aortic and tricuspid valves
+45552788^Mitral (valve) prolapse
+45553726^Unspecified haematuria
+45556882^Presence of other heart-valve replacement
+45557632^Chronic respiratory failure
+45557649^Other specified diseases of stomach and duodenum
+45557663^Constipation
+45561988^Other disorders of bilirubin metabolism
+45562094^Sleep apnoea
+45562417^Internal hemorrhoids with other complications
+45562437^Acute upper respiratory infection, unspecified
+45562445^Acute bronchitis, unspecified
+45562484^Chronic gastritis, unspecified
+45566445^Problem related to housing and economic circumstances, unspecified
+45566697^Iron deficiency anaemia secondary to blood loss (chronic)
+45567179^Congestive heart failure
+45567249^External hemorrhoids with other complications
+45568111^Pain localized to upper abdomen
+45568113^Other and unspecified abdominal pain
+45571697^Acidosis
+45572081^Acute subendocardial myocardial infarction
+45572153^Hypotension, unspecified
+45572631^Aneurysmal bone cyst
+45574361^Pertrochanteric fracture
+45576086^Adverse effects in the therapeutic use of anticoagulants
+45576869^Aortic (valve) stenosis
+45577835^Superficial injury of nose
+45581020^In vitrofertilization
+45581063^Tobacco use
+45581386^Volume depletion
+45581768^Other secondary pulmonary hypertension
+45582432^Female infertility, unspecified
+45585746^Adverse effects in the therapeutic use of other systemic antibiotics
+45591453^Essential (primary) hypertension
+45595424^Adverse effects in the therapeutic use of systemic antibiotic, unspecified
+45595838^Fluid overload
+45596196^Atherosclerotic heart disease
+45596206^Atrial fibrillation and flutter
+45600274^Adverse effects in the therapeutic use of other antacids and anti-gastric-secretion drugs
+45600378^Personal history of long-term (current) use of anticoagulants
+45600646^Unspecified diabetes mellitus, with multiple complications
+45601020^Tricuspid insufficiency
+45601123^Pneumonia, unspecified
+45601131^Chronic obstructive pulmonary disease with acute lower respiratory infection
+45605263^Malignant neoplasm: Lower lobe, bronchus or lung
+45605373^Iron deficiency anaemia, unspecified
+45605872^Orthostatic hypotension
+45605889^Bronchiectasis
+45755298^Gastroenteritis and colitis of unspecified origin
+45755958^Pertrochanteric fracture, open
+45756243^Fall on same level from slipping, tripping and stumbling
+45756412^Exposure to unspecified factor

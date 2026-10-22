@@ -1,0 +1,5 @@
+domain,distinct_codes,codes_mapped,code_coverage_pct,source_events,events_mapped,event_coverage_pct
+diagnosis,72,65,90.3,149.0,120.0,80.5
+lab,64,63,98.4,162.0,161.0,99.4
+drug,73,63,86.3,170.0,156.0,91.8
+procedure,6,6,100.0,7.0,7.0,100.0

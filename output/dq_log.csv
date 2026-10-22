@@ -1,0 +1,46 @@
+level,check,source_event_key,detail
+WARN,visit_exact_duplicate,VIS-d0c005e39b4a,row identical in all 40 columns; dropped
+WARN,order_before_admission,DRG-3971d9f367f0,order placed 0.6 h before admission
+WARN,order_before_admission,DRG-b632cbb493e1,order placed 0.6 h before admission
+WARN,order_before_admission,DRG-9583a83a62a6,order placed 6.1 h before admission
+WARN,order_before_admission,DRG-f760599331fa,order placed 6.1 h before admission
+WARN,order_before_admission,DRG-a78cb7f3b0d4,order placed 5.0 h before admission
+WARN,order_before_admission,DRG-fdca8d3a1d6c,order placed 5.0 h before admission
+WARN,order_before_admission,DRG-305cf7b80bdb,order placed 5.0 h before admission
+WARN,order_before_admission,DRG-a6bf6756857b,order placed 5.0 h before admission
+WARN,order_before_admission,DRG-5bc565542c59,order placed 5.0 h before admission
+WARN,order_before_admission,DRG-5c1d6d39ebfa,order placed 3.3 h before admission
+WARN,order_before_admission,DRG-f56fbd1f8318,order placed 2.9 h before admission
+WARN,order_before_admission,DRG-e70c194ffbf2,order placed 1.8 h before admission
+WARN,order_before_admission,DRG-7919e0ba69a1,order placed 1.7 h before admission
+INFO,dose_range,DRG-e882b37466ec,Dosage_Ordered is a range '0 - 2' mcg/kg/min
+WARN,order_before_admission,DRG-6baf03662f4b,order placed 6.1 h before admission
+WARN,dose_corrupt,DRG-ce4c934a169b,"Dosage_Ordered is an Excel datetime; dose unknown, order kept"
+WARN,order_before_admission,DRG-c1639bc7dbcc,order placed 3.9 h before admission
+WARN,order_before_admission,DRG-929be2fc02d6,order placed 1.8 h before admission
+WARN,order_before_admission,DRG-af16d240233c,order placed 1.8 h before admission
+WARN,order_before_admission,DRG-4d382958d0bf,order placed 1.0 h before admission
+WARN,order_before_admission,DRG-75468b8ccedc,order placed 1.0 h before admission
+WARN,order_before_admission,DRG-f304082799bc,order placed 1.0 h before admission
+WARN,dose_corrupt,DRG-06e25e8abaa8,"Dosage_Ordered is an Excel datetime; dose unknown, order kept"
+INFO,derived_observation_date,OBS-9c5ef42def15,observation_date = observation period start (collection date not in source)
+INFO,derived_observation_date,OBS-adf4bdf86b3c,observation_date = observation period start (collection date not in source)
+INFO,derived_observation_date,OBS-b8250f2af8a8,observation_date = observation period start (collection date not in source)
+INFO,derived_observation_date,OBS-b42eda0d967b,observation_date = observation period start (collection date not in source)
+INFO,derived_observation_date,OBS-f3a9c4582aa6,observation_date = observation period start (collection date not in source)
+INFO,derived_observation_date,OBS-c9648a8a30d8,observation_date = observation period start (collection date not in source)
+INFO,categorical_value_unmapped,LAB-9396893eb207,No Standard Meas Value concept for 'mild lipaemia' verified
+INFO,categorical_value_unmapped,LAB-3c7ba48a120a,No Standard Meas Value concept for 'mild lipaemia' verified
+INFO,lab_code_missing,LAB-b38c1f167541,Test_Code empty; mapped by Short_Text key NA|Sodium
+INFO,lab_code_missing,LAB-8bea0bbba4d0,Test_Code empty; mapped by Short_Text key NA|Sodium
+INFO,categorical_value_unmapped,LAB-deb2c557d7e7,"Workflow flag, not a categorical result"
+INFO,lab_code_missing,LAB-8ea69d0abe84,Test_Code empty; mapped by Short_Text key NA|Sodium
+INFO,value_source_value_truncated,LAB-91a62be93f80,full text (65 chars): No common clinically significant red cell alloantibodies detected
+INFO,lab_code_missing,LAB-7617cf33436b,Test_Code empty; mapped by Short_Text key NA|Sodium
+INFO,procedure_time_equals_admission,PRC-85efe6fd936d,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-895d3490da44,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-504e9df02761,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-034b8d8f3a70,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-76d09f309703,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-d4f4860844d1,procedure_datetime left NULL
+INFO,procedure_time_equals_admission,PRC-d4269afafa1d,procedure_datetime left NULL

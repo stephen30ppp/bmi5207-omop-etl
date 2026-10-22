@@ -1,0 +1,66 @@
+# Athena API lookup snapshot — lab tests (fetched 2026-10-22 via athena.ohdsi.org/api/v1 in a browser session)
+# Format: source Test_Code ^ LOINC code ^ concept_id ^ concept_name (abbrev: S/P = in Serum or Plasma; auto = by Automated count)
+# All 62 concepts returned vocabulary=LOINC, domain=Measurement, standard_concept=Standard, invalid_reason=Valid.
+# The LOINC code choice is the mapper's proposal; Athena only confirms the concept exists and is Standard.
+25OHD^62292-8^40765040^25-Hydroxyvitamin D3+25-Hydroxyvitamin D2 [Mass/volume]
+ABO^883-9^3002529^ABO group [Type] in Blood
+ABS^890-4^3001079^Blood group antibody screen [Presence] S/P
+AGP^33037-3^3045716^Anion gap S/P by calculation
+ALB^1751-7^3024561^Albumin [Mass/volume] S/P
+ALP^6768-6^3035995^Alkaline phosphatase [Enzymatic activity/volume] S/P
+ALT^1742-6^3006923^Alanine aminotransferase [Enzymatic activity/volume] S/P
+APTT^14979-9^3018677^aPTT in Platelet poor plasma by Coagulation assay
+AST^1920-8^3013721^Aspartate aminotransferase [Enzymatic activity/volume] S/P
+BAS^704-7^3013429^Basophils [#/volume] in Blood auto
+BASP^706-2^3013869^Basophils/Leukocytes in Blood auto
+BE^11555-0^3012501^Base excess in Blood by calculation
+BHCGT^19080-1^3018171^Choriogonadotropin [Units/volume] S/P
+BSAG^5196-1^3019510^Hepatitis B virus surface Ag [Presence] S/P by Immunoassay
+CA^2000-8^3015377^Calcium [Moles/volume] S/P
+CAC^29265-6^3020059^Calcium [Moles/volume] corrected for albumin S/P
+CL^2075-0^3014576^Chloride [Moles/volume] S/P
+CO2^2028-9^3015632^Carbon dioxide, total [Moles/volume] S/P
+CRE^14682-9^3020564^Creatinine [Moles/volume] S/P
+DB^14629-0^3028638^Bilirubin.direct [Moles/volume] S/P
+E2^14715-7^3026725^Estradiol (E2) [Moles/volume] S/P
+EGFRC^62238-1^40764999^Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood (creatinine-based formula)
+EOS^711-2^3028615^Eosinophils [#/volume] in Blood auto
+EOSP^713-8^3010457^Eosinophils/Leukocytes in Blood auto
+GHB^4548-4^3004410^Hemoglobin A1c/Hemoglobin.total in Blood
+GHB2^59261-8^40762352^Hemoglobin A1c/Hemoglobin.total standardized per IFCC-R
+GLU^14749-6^3013826^Glucose [Moles/volume] S/P
+HB^718-7^3000963^Hemoglobin [Mass/volume] in Blood
+HCO3^1959-6^3006576^Bicarbonate [Moles/volume] in Blood
+HCT^4544-3^3023314^Hematocrit [Volume Fraction] of Blood auto
+IB^14630-8^3007242^Bilirubin.indirect [Moles/volume] S/P
+INR^6301-6^3022217^INR in Platelet poor plasma by Coagulation assay
+K^2823-3^3023103^Potassium [Moles/volume] S/P
+LDH^2532-0^3016436^Lactate dehydrogenase [Enzymatic activity/volume] S/P
+LH^10501-5^3009214^Lutropin [Units/volume] S/P
+LYM^731-0^3004327^Lymphocytes [#/volume] in Blood auto
+LYMP^736-9^3037511^Lymphocytes/Leukocytes in Blood auto
+MCH^785-6^3012030^MCH [Entitic mass] auto
+MCHC^786-4^3009744^MCHC [Entitic Mass/volume] in Red Blood Cells auto
+MCV^787-2^3023599^MCV [Entitic mean volume] in Red Blood Cells auto
+MON^742-7^3033575^Monocytes [#/volume] in Blood auto
+MONP^5905-5^3011948^Monocytes/Leukocytes in Blood auto
+MPV^32623-1^3043111^Platelet [Entitic mean volume] in Blood auto
+NA^2951-2^3019550^Sodium [Moles/volume] S/P
+NEU^751-8^3013650^Neutrophils [#/volume] in Blood auto
+NEUP^770-8^3008342^Neutrophils/Leukocytes in Blood auto
+NRBC^771-6^3007238^Nucleated erythrocytes [#/volume] in Blood auto
+PCO2^11557-6^3013290^Carbon dioxide [Partial pressure] in Blood
+PHPCT^11558-4^3010421^pH of Blood
+PLT^777-3^3024929^Platelets [#/volume] in Blood auto
+PO2^11556-8^3027315^Oxygen [Partial pressure] in Blood
+PO4^14879-1^3003458^Phosphate [Moles/volume] S/P
+PT^5902-2^3034426^Prothrombin time (PT)
+RBC^789-8^3020416^Erythrocytes [#/volume] in Blood auto
+RDW^788-0^3019897^Erythrocyte [DistWidth] in Blood auto
+RH^10331-7^3003310^Rh [Type] in Blood
+SAT^20564-1^3013502^Oxygen saturation in Blood
+TBIL^14631-6^3006140^Bilirubin.total [Moles/volume] S/P
+TNI^10839-9^3021337^Troponin I.cardiac [Mass/volume] S/P
+URA^14933-6^3026493^Urate [Moles/volume] S/P
+URE^22664-7^3020779^Urea [Moles/volume] S/P
+WBC^6690-2^3000905^Leukocytes [#/volume] in Blood auto
