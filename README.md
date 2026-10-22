@@ -52,19 +52,30 @@ comes from a row in `mappings/*.csv`.
 ## Current results (`--mapping-mode review`)
 
 - 527 source events, all accounted for (494 written, 28 rerouted by domain, 1 exact duplicate, 4 unknown attributes not generated)
-- Validation: **128 PASS, 1 WARN, 0 FAIL** (the WARN: mappings still awaiting second review)
+- Validation: **128 PASS, 1 WARN, 0 FAIL** (the WARN: 479 source events use PROPOSED mappings and 16 use NEEDS_CLINICAL_REVIEW ones; in final mode this check is a FAIL)
 - Event-level mapping coverage: diagnoses 80.5%, labs 99.4%, drugs 91.8%, procedures 100%
 
 See `docs/11-implementation-results.md` for the full breakdown and slide-ready mapping cases.
 
 ## Mapping review workflow
 
-All mapping rows are `PROPOSED`: the concept was verified in Athena (exists, Standard, Valid, right
-domain) but has not had a second human review. To produce final results:
+All mapping rows start as `PROPOSED` (concept verified in Athena: exists, Standard, Valid, right
+domain) or as a proposed negative decision (`UNMAPPABLE`). Open questions are `NEEDS_CLINICAL_REVIEW`.
 
-1. A reviewer checks each row in `mappings/*.csv`, fills `reviewer` / `review_date`, sets `status=APPROVED`.
-2. Resolve the `NEEDS_CLINICAL_REVIEW` rows.
-3. Run with `--mapping-mode final` (only `APPROVED` rows are used; the run stops if a required fixed concept is unapproved).
+Rules enforced by `etl/vocab.py` (each row is judged on its own):
+
+- A reviewed decision is `APPROVED`, `UNMAPPABLE` or `REJECTED` with `reviewer` and `review_date`
+  filled and `reviewer` different from `mapper`.
+- A source code with several rows (one-to-many, `Maps to value`) is used only if **every** live row
+  passes; a partially approved group is not used at all.
+- `NEEDS_CLINICAL_REVIEW` is never used and never treated as `UNMAPPABLE`.
+
+`--mapping-mode final` runs a review gate before anything is written: if any row in
+`mappings/*.csv` is not a reviewed decision, the run stops with exit code 2, writes the list to
+`<out>.review_gate.csv` and leaves `<out>` untouched.
+
+Every run (both modes) is built in a temporary sibling directory and replaces `<out>` only when
+validation has no FAIL; otherwise the build is kept as `<out>.failed` and the previous output stays.
 
 ## Privacy
 

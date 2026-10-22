@@ -73,3 +73,10 @@
 ## 8. 覆盖率报告（写入报告的 Results 部分）
 
 按 domain 统计：不同编码的映射率、行映射率，以及 UNMAPPABLE 编码清单（附频次）。如有条件，可以把输出加载到 DuckDB，跑 OHDSI DataQualityDashboard，作为加分项。
+
+## 9. Final 模式的审核门禁（第二轮审计后新增，ERROR 级）
+
+- T-GATE-1：final 模式写出任何文件之前，`mappings/*.csv` 的每一行都必须是已审核的决定，即 APPROVED、UNMAPPABLE 或 REJECTED，并且有 reviewer 和 review_date、reviewer ≠ mapper。否则以 exit 2 退出，正式输出不变。
+- T-GATE-2：一对多映射中只要有一行未批准，整个源编码都不使用。
+- T-GATE-3：NEEDS_CLINICAL_REVIEW 会阻止 final 模式运行，不会被当作 UNMAPPABLE。
+- T-GATE-4：所有构建都先在临时目录完成，校验出现 FAIL 时不覆盖上一版输出。

@@ -112,7 +112,7 @@ vocabulary,measurement.measurement_concept_id non-zero concepts Standard & valid
 vocabulary,measurement.measurement_concept_id domain == Measurement,PASS,[]
 vocabulary,drug_exposure.drug_concept_id non-zero concepts Standard & valid,PASS,[]
 vocabulary,drug_exposure.drug_concept_id domain == Drug,PASS,[]
-vocabulary,rows relying on mappings not yet second-reviewed (status PROPOSED),WARN,478 source events - set status=APPROVED after review
+vocabulary,every mapping used is a reviewed decision (APPROVED/UNMAPPABLE/REJECTED),WARN,"494 source events; statuses {'PROPOSED': 479, 'NEEDS_CLINICAL_REVIEW': 16}"
 semantics,MEASUREMENT.unit_concept_id all NULL (no units in source),PASS,
 semantics,categorical results not stored in value_as_number,PASS,
 semantics,operator '<' result parsed (B-HCG '<2.0'),PASS,1

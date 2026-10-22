@@ -65,10 +65,13 @@ SHIFT_MIN_DAYS = 30
 SHIFT_MAX_DAYS = 365
 YEAR_ANCHOR = (7, 2)  # year-only fields are shifted via YYYY-07-02 + d
 
-# Mapping statuses the ETL may consume.
-#   APPROVED = second human reviewer signed off.
-#   PROPOSED = target concept verified in Athena (exists, Standard, Valid, right domain) but not yet
-#              reviewed by a second person. Allowed in "review" mode, rejected in "final" mode.
+# Mapping statuses.
+#   PROPOSED  = target concept verified in Athena (exists, Standard, Valid, right domain) but not yet
+#               reviewed by a second person. Usable in "review" mode only.
+#   NEEDS_CLINICAL_REVIEW = open question; never usable, and never treated as UNMAPPABLE.
+#   APPROVED / UNMAPPABLE / REJECTED = reviewed decisions; each row needs reviewer + review_date,
+#               reviewer != mapper. "final" mode accepts nothing else and refuses to run otherwise.
+REVIEWED_STATUSES = {"APPROVED", "UNMAPPABLE", "REJECTED"}
 ACCEPTED_STATUSES = {
     "review": {"APPROVED", "PROPOSED"},
     "final": {"APPROVED"},

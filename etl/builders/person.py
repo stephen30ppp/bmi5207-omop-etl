@@ -36,6 +36,7 @@ def build_person(ctx: Context) -> list[dict]:
 def build_death(ctx: Context) -> list[dict]:
     rows = []
     type_id = ctx.vocab.concept("type:death")
+    type_status = ctx.vocab.lookup("fixed", "type:death").status
     for r in ctx.tables["patient_demo"].itertuples():
         if not bool(r.Deceased_Ind):
             continue
@@ -50,7 +51,7 @@ def build_death(ctx: Context) -> list[dict]:
             "death_date": dt.date(year, 12, 31),  # CDM convention for year-only death dates
             "death_type_concept_id": type_id,
             "_key": key,
-            "_status": "PROPOSED",
+            "_status": type_status,
         })
     return rows
 

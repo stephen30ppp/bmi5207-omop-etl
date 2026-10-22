@@ -1,7 +1,8 @@
 source_table,cdm_table,unmapped_reason,rows
 case_visit,,exact duplicate of an earlier case_visit row,1
 case_visit,condition_occurrence,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary),13
-case_visit,condition_occurrence,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode,16
+case_visit,condition_occurrence,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW),1
+case_visit,condition_occurrence,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW),15
 lab_results,measurement,"Workflow flag ('Reviewed'), not a clinical measurement result",1
 medication_order,drug_exposure,Blood product (fresh frozen plasma); no Standard Drug concept verified,1
 medication_order,drug_exposure,Composition of 'Mylocaine' suspension not verified,1

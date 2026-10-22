@@ -71,22 +71,74 @@ class VocabIndex:
             frames[sheet] = df
         return cls(frames, mode)
 
+    def row_problem(self, r) -> str:
+        """Why this single mapping row may not be used in the current mode ('' if usable).
+
+        Every row is judged on its own: one approved row never vouches for its siblings.
+        Reviewed decisions (APPROVED, UNMAPPABLE, REJECTED) need a reviewer different from the
+        mapper and a review date; in final mode nothing else is acceptable.
+        """
+        status = r.status
+        if (self.mode == "review" and status in ("UNMAPPABLE", "REJECTED")
+                and not r.reviewer.strip()):
+            return ""  # proposed negative decision; still blocks final mode
+        if status in settings.REVIEWED_STATUSES:
+            if not r.reviewer.strip():
+                return f"{status} without reviewer"
+            if not r.review_date.strip():
+                return f"{status} without review_date"
+            if r.reviewer.strip().lower() == r.mapper.strip().lower():
+                return f"{status} reviewed by its own mapper ({r.mapper})"
+            return ""
+        if self.mode == "review" and status == "PROPOSED":
+            return ""
+        if status == "NEEDS_CLINICAL_REVIEW":
+            return "pending clinical review (NEEDS_CLINICAL_REVIEW)"
+        return f"status {status or '<empty>'} not accepted in {self.mode} mode"
+
+    def review_problems(self) -> pd.DataFrame:
+        """All rows that block a run in the current mode (used as the final-mode gate)."""
+        rows = []
+        for sheet, df in self.frames.items():
+            for r in df.itertuples():
+                problem = self.row_problem(r)
+                if problem:
+                    rows.append({"sheet": sheet, "source_code": r.source_code, "map_seq": r.map_seq,
+                                 "relationship": r.relationship, "status": r.status,
+                                 "target_concept_id": r.target_concept_id, "problem": problem})
+        return pd.DataFrame(rows, columns=["sheet", "source_code", "map_seq", "relationship",
+                                           "status", "target_concept_id", "problem"])
+
     def lookup(self, sheet: str, source_code: str) -> MapResult:
         g = self._index.get((sheet, str(source_code)))
         if g is None:
             return MapResult(str(source_code), "MISSING", unmapped_reason="no row in mapping sheet")
         first = g.iloc[0]
+        statuses = sorted(set(g.status) - {"REJECTED"})
         res = MapResult(
-            source_code=str(source_code), status=first.status,
+            source_code=str(source_code), status="/".join(statuses) or "REJECTED",
             source_concept_id=int(first.source_concept_id or 0), equivalence=first.equivalence,
         )
-        if first.status not in self.accepted:
-            res.unmapped_reason = first.unmapped_reason or (
-                f"mapping status {first.status} not accepted in {self.mode} mode")
+        # A source code is used only if EVERY live row of its group passes review on its own;
+        # a partially approved one-to-many mapping must not emit its approved half.
+        live = [r for r in g.itertuples() if r.status != "REJECTED"]
+        problems = [f"map_seq {r.map_seq} {r.relationship}: {p}"
+                    for r in g.itertuples() if (p := self.row_problem(r))]
+        if problems:
+            res.unmapped_reason = "; ".join(problems)
             return res
-        values = {r.map_seq: int(r.target_concept_id) for r in g.itertuples()
+        if not live:
+            res.unmapped_reason = "all candidate mappings rejected by reviewer"
+            return res
+        if any(r.status == "UNMAPPABLE" for r in live):
+            if len(live) > 1:
+                res.unmapped_reason = "inconsistent group: UNMAPPABLE mixed with other rows"
+            else:
+                res.unmapped_reason = live[0].unmapped_reason or "reviewed as unmappable"
+            return res
+        values = {r.map_seq: int(r.target_concept_id) for r in live
                   if r.relationship == "Maps to value" and r.target_concept_id not in ("", "0")}
-        for r in g.itertuples():
+        for r in live:
             if r.relationship == "Maps to value":
                 continue
             cid = int(r.target_concept_id or 0)

@@ -61,9 +61,18 @@
 
 ### 2.4 校验结果：128 项 PASS，1 项 WARN，0 项 FAIL
 
-唯一的 WARN 是：478 个源事件依赖状态为 PROPOSED 的映射。这些映射的概念已在 Athena 中核实，但还没有第二人审核。小组复核后把 status 改为 APPROVED，再用 `--mapping-mode final` 生成正式结果。
+唯一的 WARN 是：479 个源事件使用了 PROPOSED 映射，16 个使用了 NEEDS_CLINICAL_REVIEW 映射。PROPOSED 映射的概念已在 Athena 中核实，但还没有第二人审核。小组复核后把 status 改为 APPROVED，再用 `--mapping-mode final` 生成正式结果。
 
-在 final 模式下，只要有固定概念还没有 APPROVED，pipeline 就会直接停止，不会输出未经审核的概念（由测试 `test_final_mode_refuses_unreviewed_mappings` 覆盖）。
+### 2.5 Final 模式的审核门禁
+
+这一节是第二轮审计后的修订：
+
+- **逐行审核**：每一行映射单独判断。APPROVED、UNMAPPABLE、REJECTED 都必须填写 reviewer 和 review_date，并且 reviewer ≠ mapper。
+- **一对多不能部分批准**：同一个源编码只要有一行未通过审核，整个编码都不使用。例如 ZSD714H 如果只批准了冠脉造影，没有批准 PTCA，这两行都不会输出。
+- **NEEDS_CLINICAL_REVIEW 不等于 UNMAPPABLE**：前者是待决问题，会阻止 final 模式运行，不会悄悄变成 concept 0 后照常输出。
+- **门禁先于写出**：final 模式在写任何文件之前，先检查 `mappings/*.csv` 的每一行。只要有一行不合格，就以 exit 2 退出，把问题清单写到 `<out>.review_gate.csv`，正式输出保持不变。按当前 mapping 表运行，会被拒绝的有 248 行：225 行 PROPOSED、20 行 UNMAPPABLE 尚未审核、3 行 NEEDS_CLINICAL_REVIEW。
+- **先构建、后发布**：所有运行都先在临时目录构建，校验没有 FAIL 才替换正式输出；失败的构建保留在 `<out>.failed`。final 模式下，“使用了未审核映射”这一项校验是 FAIL，不是 WARN。
+- 测试见 `tests/test_review_gate.py`，以及 `tests/test_pipeline.py` 中的 final 模式测试：部分批准的一对多会被拒绝；全部审核后能正常发布；校验失败时不覆盖上一版输出。
 
 ## 3. 可以放进幻灯片的映射案例
 

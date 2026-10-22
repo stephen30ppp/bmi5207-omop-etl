@@ -3,7 +3,13 @@
     python -m etl.run --raw "<folder with Patient N ... sub-folders>" --secret secrets/etl.key --out output
 
 Stages: raw -> staging -> de-identification -> builders -> domain router -> central keys ->
-OMOP writer -> validation. Exit code 1 if any ERROR-level validation check fails.
+OMOP writer -> validation.
+
+Every run is built in a temporary sibling directory and only replaces `--out` after validation has
+no FAIL; a failed build is kept as `<out>.failed` and the previous output is left untouched.
+In final mode the review gate runs first: any mapping row that is not a properly reviewed decision
+(reviewer + review_date, reviewer != mapper) stops the run before anything is written.
+Exit codes: 0 ok, 1 validation FAIL, 2 review gate refused final mode.
 """
 from __future__ import annotations
 
@@ -11,7 +17,10 @@ import argparse
 import datetime as dt
 import hashlib
 import json
+import os
+import shutil
 import sys
+import tempfile
 from pathlib import Path
 
 import pandas as pd
@@ -45,11 +54,61 @@ def event_span(tables: dict, visits: pd.DataFrame, deid: Deid) -> dict[int, tupl
     return {pid: (min(v), max(v)) for pid, v in stamps.items()}
 
 
-def run(raw: Path, secret: bytes, out: Path, mapping_mode: str = "review") -> dict:
+class ReviewGateError(RuntimeError):
+    def __init__(self, problems: pd.DataFrame):
+        self.problems = problems
+        counts = problems.groupby("problem").size().sort_values(ascending=False)
+        super().__init__(f"final mode refused: {len(problems)} mapping row(s) not properly reviewed "
+                         f"({'; '.join(f'{k}: {v}' for k, v in counts.head(5).items())})")
+
+
+def run(raw: Path, secret: bytes, out: Path, mapping_mode: str = "review",
+        mappings_dir: Path = settings.MAPPINGS_DIR) -> dict:
+    vocab = VocabIndex.load(mappings_dir, mapping_mode)
+    if mapping_mode == "final":
+        problems = vocab.review_problems()
+        if not problems.empty:
+            raise ReviewGateError(problems)
+    out = Path(out).resolve()
+    out.parent.mkdir(parents=True, exist_ok=True)
+    staging = Path(tempfile.mkdtemp(prefix=f".{out.name}.build-", dir=out.parent))
+    try:
+        report = build(Path(raw), secret, staging, vocab)
+    except BaseException:
+        shutil.rmtree(staging, ignore_errors=True)
+        raise
+    if report["summary"]["FAIL"]:
+        failed = out.with_name(out.name + ".failed")
+        shutil.rmtree(failed, ignore_errors=True)
+        staging.rename(failed)
+        report.update(published=False, path=failed)
+    else:
+        publish(staging, out)
+        report.update(published=True, path=out)
+    return report
+
+
+def publish(staging: Path, out: Path) -> None:
+    """Replace `out` with the validated build; restore the previous version if the swap fails."""
+    backup = out.with_name(f".{out.name}.prev-{os.getpid()}")
+    had_previous = out.exists()
+    if had_previous:
+        out.rename(backup)
+    try:
+        staging.rename(out)
+    except BaseException:
+        if had_previous:
+            backup.rename(out)
+        raise
+    if had_previous:
+        shutil.rmtree(backup, ignore_errors=True)
+
+
+def build(raw: Path, secret: bytes, out: Path, vocab: VocabIndex) -> dict:
+    mapping_mode = vocab.mode
     tables, manifest = load_all(raw)
     visits, dropped = dedup_exact(tables["case_visit"])
     deid = Deid(secret, list(tables["patient_demo"].Patient_No))
-    vocab = VocabIndex.load(settings.MAPPINGS_DIR, mapping_mode)
     ctx = Context(deid, vocab, tables, visits, ids.assign_visit_ids(visits, deid))
 
     for r in dropped.itertuples():
@@ -164,9 +223,16 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--mapping-mode", choices=sorted(settings.ACCEPTED_STATUSES), default="review",
                     help="review = APPROVED+PROPOSED mappings; final = APPROVED only")
     args = ap.parse_args(argv)
-    report = run(args.raw, args.secret.read_bytes().strip(), args.out, args.mapping_mode)
+    try:
+        report = run(args.raw, args.secret.read_bytes().strip(), args.out, args.mapping_mode)
+    except ReviewGateError as e:
+        gate = args.out.with_name(args.out.name + ".review_gate.csv")
+        write_plain(e.problems, gate)
+        print(f"{e}\nfull list: {gate}\n{args.out} was not modified", file=sys.stderr)
+        return 2
     s = report["summary"]
-    print(f"validation: {s['PASS']} pass, {s['WARN']} warn, {s['FAIL']} fail -> {args.out}")
+    state = "published to" if report["published"] else "NOT published; failed build kept at"
+    print(f"validation: {s['PASS']} pass, {s['WARN']} warn, {s['FAIL']} fail - {state} {report['path']}")
     return 1 if s["FAIL"] else 0
 
 

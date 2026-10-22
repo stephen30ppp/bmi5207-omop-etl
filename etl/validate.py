@@ -103,9 +103,13 @@ def validate(raw: Path, tables: dict, visits: pd.DataFrame, final: dict, written
         wrong = [i for i in ids_ if info.get(i, ("", "", ""))[2] != DOMAIN_OF_TABLE[t]]
         c.add("vocabulary", f"{t}.{cols[0]} domain == {DOMAIN_OF_TABLE[t]}", not wrong,
               str(sorted(set(wrong))[:5]))
-    proposed = lineage[lineage.mapping_status == "PROPOSED"].source_event_key.nunique()
-    c.add("vocabulary", "rows relying on mappings not yet second-reviewed (status PROPOSED)",
-          proposed == 0, f"{proposed} source events - set status=APPROVED after review", warn_only=True)
+    tokens = lineage.mapping_status.astype(str).str.split("/")
+    pending_mask = tokens.apply(lambda ts: any(t and t not in settings.REVIEWED_STATUSES for t in ts))
+    pending = lineage[pending_mask]
+    detail = (f"{pending.source_event_key.nunique()} source events; statuses "
+              f"{pending.mapping_status.value_counts().to_dict()}")
+    c.add("vocabulary", "every mapping used is a reviewed decision (APPROVED/UNMAPPABLE/REJECTED)",
+          pending.empty, detail, warn_only=vocab.mode != "final")
 
     # --- semantics
     m, d = final["measurement"], final["drug_exposure"]
@@ -186,10 +190,8 @@ def coverage(lineage: pd.DataFrame, vocab: VocabIndex) -> pd.DataFrame:
     """Per domain: distinct source codes mapped and source rows mapped (concept != 0)."""
     rows = []
     for sheet in ("diagnosis", "lab", "drug", "procedure"):
-        df = vocab.frames[sheet]
-        codes = df.groupby("source_code").apply(
-            lambda g: (g.status.iloc[0] in vocab.accepted)
-            and any(x not in ("", "0") for x in g.target_concept_id), include_groups=False)
+        codes = pd.Series({code: vocab.lookup(sheet, code).mapped
+                           for code in vocab.frames[sheet].source_code.unique()})
         rows.append({"domain": sheet, "distinct_codes": len(codes), "codes_mapped": int(codes.sum()),
                      "code_coverage_pct": round(100 * codes.mean(), 1)})
     events = lineage[lineage.cdm_table.isin(list(TABLE_FIELDS))]

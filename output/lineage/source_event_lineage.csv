@@ -6,14 +6,14 @@ DX-01bfcd91a9f4,case_visit,written,condition_occurrence,89,435517,PROPOSED,EQUAL
 DX-06b8ad418395,case_visit,written,condition_occurrence,14,75860,PROPOSED,EQUAL,
 DX-07048f82c5d8,case_visit,written,condition_occurrence,103,256449,PROPOSED,EQUAL,
 DX-0848250a6e56,case_visit,written,condition_occurrence,90,255848,PROPOSED,EQUAL,
-DX-0a3267173bcb,case_visit,written,condition_occurrence,15,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-0a3267173bcb,case_visit,written,condition_occurrence,15,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-0ad4d7d0dab3,case_visit,written,condition_occurrence,50,4110056,PROPOSED,EQUAL,
 DX-0f942051e0a1,case_visit,written,condition_occurrence,62,4256228,PROPOSED,EQUAL,
 DX-1171fbf19398,case_visit,written,condition_occurrence,118,78234,PROPOSED,EQUAL,
 DX-1311f599a6fc,case_visit,written,condition_occurrence,1,4270024,PROPOSED,EQUAL,
 DX-159d8ae1478f,case_visit,written,condition_occurrence,104,4068155,PROPOSED,EQUAL,
 DX-172d0a840c45,case_visit,written,condition_occurrence,110,200219,PROPOSED,EQUAL,
-DX-17ebada6edb0,case_visit,written,condition_occurrence,37,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-17ebada6edb0,case_visit,written,condition_occurrence,37,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-1b16b462bf9c,case_visit,written,condition_occurrence,63,4068155,PROPOSED,EQUAL,
 DX-1cc01006e7e8,case_visit,written,condition_occurrence,5,4168700,PROPOSED,EQUAL,
 DX-1f19d1a83394,case_visit,written_rerouted,observation,28,42538119,PROPOSED,EQUAL,
@@ -31,16 +31,16 @@ DX-2d6b0a37cc1c,case_visit,written_rerouted,observation,16,42538119,PROPOSED,EQU
 DX-2e933c4bdc92,case_visit,written_rerouted,observation,2,437175,PROPOSED,WIDER,
 DX-300d3bc7a257,case_visit,written,condition_occurrence,10,37311320,PROPOSED,EQUAL,
 DX-320e37f9382f,case_visit,written,condition_occurrence,97,4252872,PROPOSED,EQUAL,
-DX-355bc9116fc5,case_visit,written,condition_occurrence,86,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-355bc9116fc5,case_visit,written,condition_occurrence,86,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-398226e3b66a,case_visit,written,condition_occurrence,119,78162,PROPOSED,EQUAL,
 DX-39aa14ce5bc8,case_visit,written_rerouted,observation,20,1340204,PROPOSED,EQUAL,
 DX-3aa4a90ce3b7,case_visit,written_rerouted,observation,22,439996,PROPOSED,EQUAL,
 DX-3bb0a0721381,case_visit,written,condition_occurrence,51,29735,PROPOSED,EQUAL,
 DX-3dff35d79908,case_visit,written,condition_occurrence,106,4256228,PROPOSED,EQUAL,
 DX-3fac671258bd,case_visit,written,condition_occurrence,44,437038,PROPOSED,EQUAL,
-DX-4007dc9b8400,case_visit,written,condition_occurrence,19,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-4007dc9b8400,case_visit,written,condition_occurrence,19,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-42035ba634cb,case_visit,written_rerouted,observation,25,439996,PROPOSED,EQUAL,
-DX-45bd0dbbe289,case_visit,written,condition_occurrence,98,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-45bd0dbbe289,case_visit,written,condition_occurrence,98,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-47a63042f7a5,case_visit,written,condition_occurrence,28,432869,PROPOSED,EQUAL,
 DX-47d07770888b,case_visit,written_rerouted,procedure_occurrence,6,4199599,PROPOSED,EQUAL,
 DX-48c54b2e35b6,case_visit,written,condition_occurrence,112,434004,PROPOSED,EQUAL,
@@ -53,7 +53,7 @@ DX-4f986b238173,case_visit,written,condition_occurrence,107,313459,PROPOSED,WIDE
 DX-502f6ffc5d6a,case_visit,written,condition_occurrence,29,30133,PROPOSED,EQUAL,
 DX-52ab8cd22fb8,case_visit,written_rerouted,observation,17,432506,PROPOSED,EQUAL,
 DX-533b7a096954,case_visit,written,condition_occurrence,45,255848,PROPOSED,EQUAL,
-DX-55818d4153df,case_visit,written,condition_occurrence,75,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-55818d4153df,case_visit,written,condition_occurrence,75,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-55adb69dd267,case_visit,written,condition_occurrence,114,436659,PROPOSED,EQUAL,
 DX-59c1792ff36b,case_visit,written_rerouted,observation,27,1340204,PROPOSED,EQUAL,
 DX-5cba415f498f,case_visit,written,condition_occurrence,64,192671,PROPOSED,EQUAL,
@@ -62,14 +62,14 @@ DX-5fb21e6abb19,case_visit,written,condition_occurrence,30,0,UNMAPPABLE,UNMATCHE
 DX-61192bd46e05,case_visit,written,condition_occurrence,7,4157454,PROPOSED,EQUAL,
 DX-619595028580,case_visit,written_rerouted,observation,21,1340204,PROPOSED,EQUAL,
 DX-638bfe390fb4,case_visit,written,condition_occurrence,53,37016310,PROPOSED,EQUAL,
-DX-654019fe3218,case_visit,written,condition_occurrence,108,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-654019fe3218,case_visit,written,condition_occurrence,108,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-658fffdf60e3,case_visit,written,condition_occurrence,26,201909,PROPOSED,EQUAL,
 DX-668b312da0a9,case_visit,written,condition_occurrence,54,255848,PROPOSED,EQUAL,
 DX-67558299ac63,case_visit,written,condition_occurrence,65,4144111,PROPOSED,EQUAL,
 DX-6d63d7d254ce,case_visit,written,condition_occurrence,17,74737,PROPOSED,WIDER,
 DX-76caf34f3e5c,case_visit,written,condition_occurrence,99,256449,PROPOSED,EQUAL,
 DX-7957d75511a5,case_visit,written,condition_occurrence,72,319835,PROPOSED,EQUAL,
-DX-7b449b253280,case_visit,written,condition_occurrence,81,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-7b449b253280,case_visit,written,condition_occurrence,81,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-7bc8542c3d75,case_visit,written,condition_occurrence,55,317002,PROPOSED,EQUAL,
 DX-7c90c4f69f65,case_visit,written,condition_occurrence,46,4256228,PROPOSED,EQUAL,
 DX-7e5996768150,case_visit,written,condition_occurrence,38,37016310,PROPOSED,EQUAL,
@@ -93,8 +93,8 @@ DX-9c33a56cb264,case_visit,written,condition_occurrence,93,0,UNMAPPABLE,UNMATCHE
 DX-9c5661ed46de,case_visit,written,condition_occurrence,57,0,UNMAPPABLE,UNMATCHED,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary)
 DX-9cd269a537bf,case_visit,written_rerouted,observation,30,1340204,PROPOSED,EQUAL,
 DX-a252ad932496,case_visit,written,condition_occurrence,20,4015503,PROPOSED,WIDER,
-DX-a3401749cc05,case_visit,written,condition_occurrence,32,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
-DX-a340f6909daf,case_visit,written,condition_occurrence,73,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-a3401749cc05,case_visit,written,condition_occurrence,32,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
+DX-a340f6909daf,case_visit,written,condition_occurrence,73,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-a38a4c70902f,case_visit,written,condition_occurrence,67,0,UNMAPPABLE,UNMATCHED,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary)
 DX-a4b76d345e43,case_visit,written,condition_occurrence,115,75860,PROPOSED,EQUAL,
 DX-ad658cd6cf64,case_visit,written_rerouted,observation,31,42538119,PROPOSED,EQUAL,
@@ -104,21 +104,21 @@ DX-b1768547f34f,case_visit,written,condition_occurrence,58,0,UNMAPPABLE,UNMATCHE
 DX-b4a9d8ff0327,case_visit,written_rerouted,observation,7,42538119,PROPOSED,EQUAL,
 DX-b75c3696eb79,case_visit,written,condition_occurrence,59,4108637,PROPOSED,WIDER,
 DX-b862bbff1b8c,case_visit,written,condition_occurrence,21,320128,PROPOSED,EQUAL,
-DX-b8a8ae0f47bb,case_visit,written,condition_occurrence,11,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-b8a8ae0f47bb,case_visit,written,condition_occurrence,11,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-ba183b9ff8a0,case_visit,written,condition_occurrence,33,194382,PROPOSED,EQUAL,
 DX-bb5364e56121,case_visit,written,condition_occurrence,82,257011,PROPOSED,EQUAL,
 DX-bf40c547dca7,case_visit,written_rerouted,observation,29,1340204,PROPOSED,EQUAL,
 DX-bfd30c49cad0,case_visit,written,condition_occurrence,39,4006971,PROPOSED,EQUAL,
 DX-c48a3516bc0e,case_visit,written,condition_occurrence,47,432869,PROPOSED,EQUAL,
 DX-c4f72fb6aa10,case_visit,written,condition_occurrence,22,432867,PROPOSED,EQUAL,
-DX-c92b19bcae3e,case_visit,written,condition_occurrence,68,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-c92b19bcae3e,case_visit,written,condition_occurrence,68,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-cb1c5dfc6c79,case_visit,written,condition_occurrence,23,0,UNMAPPABLE,UNMATCHED,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary)
 DX-cd284b9826d0,case_visit,written,condition_occurrence,95,437833,PROPOSED,EQUAL,
-DX-cd73cb968fef,case_visit,written,condition_occurrence,116,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-cd73cb968fef,case_visit,written,condition_occurrence,116,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-cfe40e99e8a3,case_visit,written,condition_occurrence,60,0,UNMAPPABLE,UNMATCHED,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary)
 DX-d0e5c6f0d47f,case_visit,written,condition_occurrence,77,75860,PROPOSED,EQUAL,
 DX-d154a049ea90,case_visit,written,condition_occurrence,109,255848,PROPOSED,EQUAL,
-DX-d527f8e09022,case_visit,written,condition_occurrence,121,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-d527f8e09022,case_visit,written,condition_occurrence,121,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-d5bc76b973a0,case_visit,written,condition_occurrence,12,4000609,PROPOSED,WIDER,
 DX-d6c9dbcc0758,case_visit,written_rerouted,observation,1,903654,PROPOSED,EQUAL,
 DX-d98e97a5bc98,case_visit,written,condition_occurrence,101,437833,PROPOSED,EQUAL,
@@ -139,10 +139,10 @@ DX-f0a569ce768c,case_visit,written,condition_occurrence,35,255848,PROPOSED,EQUAL
 DX-f160ff87809a,case_visit,written,condition_occurrence,36,4110056,PROPOSED,EQUAL,
 DX-f24c7c68d808,case_visit,written,condition_occurrence,13,4225273,PROPOSED,EQUAL,
 DX-f24fa10d5ea7,case_visit,written,condition_occurrence,48,0,UNMAPPABLE,UNMATCHED,ICD-10-AM-specific code; no WHO ICD10 code or parent exists in Athena (Athena has no ICD10AM vocabulary)
-DX-f2bc7bd2b8c1,case_visit,written,condition_occurrence,49,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-f2bc7bd2b8c1,case_visit,written,condition_occurrence,49,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-f49490d39485,case_visit,written,condition_occurrence,70,37119138,PROPOSED,EQUAL,
 DX-facc4acd5563,case_visit,written,condition_occurrence,88,4256228,PROPOSED,EQUAL,
-DX-faf836370cfd,case_visit,written,condition_occurrence,96,0,NEEDS_CLINICAL_REVIEW,WIDER,mapping status NEEDS_CLINICAL_REVIEW not accepted in review mode
+DX-faf836370cfd,case_visit,written,condition_occurrence,96,0,NEEDS_CLINICAL_REVIEW,WIDER,map_seq 1 Maps to: pending clinical review (NEEDS_CLINICAL_REVIEW); map_seq 1 Maps to value: pending clinical review (NEEDS_CLINICAL_REVIEW)
 DX-fc09de2939aa,case_visit,written,condition_occurrence,40,319835,PROPOSED,EQUAL,
 DX-fdbe4d8c2c69,case_visit,written,condition_occurrence,18,319041,PROPOSED,EQUAL,
 DX-fe46b5425279,case_visit,written,condition_occurrence,78,260139,PROPOSED,EQUAL,

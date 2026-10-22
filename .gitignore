@@ -14,3 +14,8 @@ __pycache__/
 .venv/
 .pytest_cache/
 .DS_Store
+# ETL build artefacts (staging dirs, failed builds, review-gate reports)
+.*.build-*/
+.*.prev-*/
+*.failed/
+*.review_gate.csv
